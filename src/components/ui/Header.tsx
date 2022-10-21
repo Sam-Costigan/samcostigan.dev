@@ -10,6 +10,7 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 import BracketLeft from "components/icons/BracketLeft";
 import BracketRight from "components/icons/BracketRight";
+import Link from "next/link";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -19,11 +20,14 @@ const Header = () => {
         <HStack color="yellow.400">
           <BracketLeft height="50px" />
           <Heading as="h1" lineHeight="50px">
-            samcostigan.dev
+            <Link href="/">samcostigan.dev</Link>
           </Heading>
           <BracketRight height="50px" />
         </HStack>
         <Spacer />
+        <HStack>
+          <Link href="/about">About</Link>
+        </HStack>
         <IconButton
           variant="ghost"
           aria-label={`Switch to ${

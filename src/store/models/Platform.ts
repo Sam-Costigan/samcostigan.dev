@@ -1,6 +1,6 @@
-import { types } from "mobx-state-tree";
-import Vector2 from "./Vector2";
-import Vector3 from "./Vector3";
+import { types, Instance, SnapshotIn, SnapshotOut } from "mobx-state-tree";
+import Vector2 from "store/types/Vector2";
+import Vector3 from "store/types/Vector3";
 
 const Platform = types
   .model("Platform", {
@@ -23,4 +23,7 @@ const Platform = types
     },
   }));
 
+export type IStore = Instance<typeof Platform>;
+export type IStoreSnapshotIn = SnapshotIn<typeof Platform>;
+export type IStoreSnapshotOut = SnapshotOut<typeof Platform>;
 export default Platform;

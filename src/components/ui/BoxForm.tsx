@@ -14,7 +14,7 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-import { useStore } from "storeProvider";
+import { useStore } from "store";
 
 const PositionField = ({ position }: { position: string }) => {
   return (

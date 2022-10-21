@@ -6,7 +6,7 @@ import { OrbitControls, useContextBridge } from "@react-three/drei";
 import ChakraProviderExtender from "./ChakraThemeExtender";
 import Loader from "./Loader";
 import Scene from "./Scene";
-import { StoreContext } from "storeProvider";
+import { StoreContext } from "store";
 
 const Canvas = () => {
   const theme = useTheme();

@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { useStore } from "storeProvider";
+import { useStore } from "store";
 import { Flex, Box as FlexBox } from "@react-three/flex";
 import Jester from "./Jester";
 import Platform from "./Platform";

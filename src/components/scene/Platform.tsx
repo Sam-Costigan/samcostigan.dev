@@ -9,7 +9,7 @@ import { useColorModeValueInScene } from "./ChakraThemeExtender";
 import { observer } from "mobx-react-lite";
 import { Instance } from "mobx-state-tree";
 
-import ModelPlatform from "models/Platform";
+import ModelPlatform from "store/models/Platform";
 import { Html } from "@react-three/drei";
 import Card from "./Card";
 
