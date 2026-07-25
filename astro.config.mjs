@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config'
-import svelte from '@astrojs/svelte'
+import react from '@astrojs/react';
 import mdx from '@astrojs/mdx'
 import remarkGfm from 'remark-gfm'
 import remarkSmartypants from 'remark-smartypants'
@@ -8,7 +8,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://samcostigan.dev',
-  integrations: [mdx(), svelte()],
+  integrations: [mdx(), react()],
   markdown: {
     shikiConfig: {
       theme: 'nord',
