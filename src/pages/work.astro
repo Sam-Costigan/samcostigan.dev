@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Work';
+const description = 'What I\'ve done.';
+const permalink = `${Astro.site.href}work`;
+const currentYear = new Date().getFullYear();
+const yearStarted = 2013
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="work">
+    <div class="container">
+        <h1>My work</h1>
+        <p>
+            I'm a software developer with over {currentYear - yearStarted} years of experience across agency and product work. 
+            I like the kind of problem that makes me pick up a book, scour Google, or interrogate an LLM until it clicks. 
+            If a project sends me down that path, then it has been enjoyable.
+        </p>
+
+        <h2>Experience</h2>
+        <div class="timeline">
+            <p class="mt-0">2023-Present</p>
+            <div>
+                <h4>
+                    <a href="https://www.kahuiraraunga.io/" target="_blank">Te Kāhui Raraunga</a>
+                </h4>
+                <h5>Te Whata Developer</h5>
+                <p class="small">
+                    I am currently the lead developer on <a href="https://tewhata.io/" target="_blank">Te Whata</a>, an iwi data 
+                    platform that turns complex statistical and geospatial datasets into clear, usable insights and maps. 
+                    I work closely with partner and government agencies to improve the site and incorporate additional datasets.
+                </p>
+            </div>
+            <p class="mt-0">2021-2023</p>
+            <div>
+                <h4>
+                    <a href="https://www.hospoconnect.co.nz/" target="_blank">HospoConnect</a>
+                </h4>
+                <h5>Senior Full-Stack Developer</h5>
+                <p class="small">
+                    I helped build and maintain two connected products built with Ruby on Rails, React, and React Native.
+                    Beyond writing code, I helped shape the roadmap, weighing in on product direction and priorities 
+                    alongside the team, and shipped features that moved the needle on the company's core KPIs.
+                </p>
+            </div>
+            <p class="mt-0">2017 - 2021</p>
+            <div>
+                <h4>
+                    <a href="https://octave.nz/" target="_blank">Octave</a>
+                </h4>
+                <h5>Senior Developer</h5>
+                <p class="small">
+                    At Octave, I engineered and built websites for high-profile clients, working directly with a wide range of 
+                    stakeholders to turn complex requirements into products which people were happy with. 
+                    I frequently had to solve gnarly software problems under demanding deadline pressures.
+                </p>
+            </div>
+            <p class="mt-0">2015 - 2017</p>
+            <div>
+                <h4>
+                    <a href="https://en.wikipedia.org/wiki/Publons" target="_blank">Publons</a>
+                </h4>
+                <h5>Developer</h5>
+                <p class="small">
+                    I worked on a small, agile team to build a SaaS product widely used by researchers, built on Django and Backbone. 
+                    I collaborated with planning and prioritisation to keep the product moving toward company goals, until Publons
+                    was acquired by Clarivate Analytics.
+                </p>
+            </div>
+            <p class="mt-0">2012 - 2015</p>
+            <div>
+                <h4>
+                    <a href="https://web.archive.org/web/20150117012027/http://www.stripetheweb.com/" target="_blank">Stripe the Web</a>
+                </h4>
+                <h5>Web Developer</h5>
+                <p class="small">
+                    I worked directly with a range of clients all the way from planning through to delivery - scoping projects, writing clear 
+                    requirements documents, and building a variety of sites on the SilverStripe CMS.
+                </p>
+            </div>
+        </div>
+
+        <h2>Education</h2>
+        <div class="timeline">
+            <p class="mt-0">2013-2017</p>
+            <div>
+                <h4>Bachelor of Science, Majoring in Computer Science</h4>
+                <h5>Victoria University</h5>
+            </div>
+            <p class="mt-0">2012</p>
+            <div>
+                <h4>Diploma of Web Development</h4>
+                <h5>Yoobee School of Design</h5>
+            </div>
+        </div>
+
+        <h2>Skills</h2>
+
+        <p class="small m0"><strong>Languages:</strong> Python, PHP, Ruby, JavaScript, HTML, CSS</p>
+        <p class="small m0"><strong>Frameworks:</strong> Ruby on Rails, Django, Wagtail, React, SilverStripe, Three.js</p>
+        <p class="small m0"><strong>Tools:</strong> Git, VS Code, AWS</p>
+        <p class="small m0"><strong>Databases:</strong> Postgres, MySQL, SQLite</p>
+        <p class="small m0"><strong>Operating Systems:</strong> Linux, Windows, macOS</p>
+    </div>
+</BaseLayout>
+
+<style>
+    .small {
+        font-size: 1em;
+    }
+
+    .timeline {
+        display: grid;
+    }
+
+    @media (min-width: 800px) {
+        .timeline {
+            grid-template-columns: 180px auto;
+        }
+    }
+
+    .mt\-0 {
+        margin-top: 0;
+    }
+
+    .m0 {
+        margin: 0;
+    }
+</style>
