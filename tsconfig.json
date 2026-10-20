@@ -7,6 +7,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "paths": {
+      "@assets/*": ["./public/assets/*"]
+    }
   }
 }

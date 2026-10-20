@@ -3,107 +3,132 @@ import { getCollection } from 'astro:content'
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'Home';
-const description = 'Sam\'s blog and portfolio website.';
+const description = 'Sam\'s portfolio website.';
 const permalink = Astro.site.href;
+const currentYear = new Date().getFullYear();
+const yearStarted = 2013
 
 let allPosts = await getCollection('posts')
 allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink}>
-  <div class="home-container">
-    <div class="home-copy">
-      <h1>Kia ora</h1>
-      <p>I'm Sam, a software developer from New Zealand.</p>
-      <p>Sharing my life with the world.</p>
-    </div>
-  </div>
-  <div class="container-left">
-    {allPosts.map((post, index) => {
-      const href = `/blog/${post.data.slug}`;
-      return (
-        <div>
-          { index !== 0 && <hr /> }
-          <div class="post-item">
-            <h2>
-              <a href={href}>{post.data.title}</a>
-            </h2>
-            <p>{post.data.description}</p>
-            <div class="post-item-footer">
-              <span class="post-item-date">— {post.data.publishDate}</span>
+<BaseLayout title={title} description={description} permalink={permalink} current="work">
+    <div class="container">
+        <h1>Kia ora</h1>
+        <p>
+            I'm Sam, a software developer with over {currentYear - yearStarted} years of experience across agency and product work. 
+            I like the kind of problem that makes me pick up a book, scour Google, or interrogate an LLM until it clicks. 
+            If a project sends me down that path, then it has been enjoyable.
+        </p>
+
+        <h2>Experience</h2>
+        <div class="timeline">
+            <p class="desktop-only mt-0">2023 - Present</p>
+            <div class="mt-1">
+                <div class="flex">
+                    <h4 class="flex-grow-1">
+                        <a href="https://www.kahuiraraunga.io/" target="_blank">Te Kāhui Raraunga</a>
+                    </h4>
+                    <p class="mobile-only small mt-0">2023 - Present</p>
+                </div>
+                <h5>Te Whata Developer</h5>
+                <p class="small">
+                    I am currently the lead developer on <a href="https://tewhata.io/" target="_blank">Te Whata</a>, an iwi data 
+                    platform that turns complex statistical and geospatial datasets into clear, usable insights and maps. 
+                    I work closely with partner and government agencies to improve the site and incorporate additional datasets.
+                </p>
             </div>
-          </div>
+            <p class="desktop-only mt-0">2021 - 2023</p>
+            <div class="mt-1">
+                <div class="flex">
+                    <h4 class="flex-grow-1">
+                        <a href="https://www.hospoconnect.co.nz/" target="_blank">HospoConnect</a>
+                    </h4>
+                    <p class="mobile-only small mt-0">2021 - 2023</p>
+                </div>
+                <h5>Senior Full-Stack Developer</h5>
+                <p class="small">
+                    I helped build and maintain two connected products built with Ruby on Rails, React, and React Native.
+                    Beyond writing code, I helped shape the roadmap, weighing in on product direction and priorities 
+                    alongside the team, and shipped features that moved the needle on the company's core KPIs.
+                </p>
+            </div>
+            <p class="desktop-only mt-0">2017 - 2021</p>
+            <div class="mt-1">
+                <div class="flex">
+                    <h4 class="flex-grow-1">
+                        <a href="https://octave.nz/" target="_blank">Octave</a>
+                    </h4>
+                    <p class="mobile-only small mt-0">2017 - 2021</p>
+                </div>
+                <h5>Senior Developer</h5>
+                <p class="small">
+                    At Octave, I engineered and built websites for high-profile clients, working directly with a wide range of 
+                    stakeholders to turn complex requirements into products which people were happy with. 
+                    I frequently had to solve gnarly software problems under demanding deadline pressures.
+                </p>
+            </div>
+            <p class="desktop-only mt-0">2015 - 2017</p>
+            <div class="mt-1">
+                <div class="flex">
+                    <h4 class="flex-grow-1">
+                        <a href="https://en.wikipedia.org/wiki/Publons" target="_blank">Publons</a>
+                    </h4>
+                    <p class="mobile-only small mt-0">2015 - 2017</p>
+                </div>
+                <h5>Developer</h5>
+                <p class="small">
+                    I worked on a small, agile team to build a SaaS product widely used by researchers, built on Django and Backbone. 
+                    I collaborated with planning and prioritisation to keep the product moving toward company goals, until Publons
+                    was acquired by Clarivate Analytics.
+                </p>
+            </div>
+            <p class="desktop-only mt-0">2012 - 2015</p>
+            <div class="mt-1">
+                <div class="flex">
+                    <h4 class="flex-grow-1">
+                        <a href="https://web.archive.org/web/20150117012027/http://www.stripetheweb.com/" target="_blank">Stripe the Web</a>
+                    </h4>
+                    <p class="mobile-only small mt-0">2012 - 2015</p>
+                </div>
+                <h5>Web Developer</h5>
+                <p class="small">
+                    I worked directly with a range of clients all the way from planning through to delivery - scoping projects, writing clear 
+                    requirements documents, and building a variety of sites on the SilverStripe CMS.
+                </p>
+            </div>
         </div>
-      )
-    })}
-  </div>
+
+        <h2>Conservation</h2>
+        <div class="timeline">
+            <p class="desktop-only mt-0">2026 - Present</p>
+            <div class="mt-1">
+                <div class="flex">
+                    <h4 class="flex-grow-1">
+                        <a href="https://www.fof.org.nz/" target="_blank">Friends of Flora</a>
+                    </h4>
+                    <p class="mobile-only small mt-0">2026 - Present</p>
+                </div>
+                <h5>Volunteer</h5>
+                <p class="small">
+                    I volunteer with Friends of Flora in the Kahurangi National Park. We maintain a network of traplines and undertake monitoring 
+                    programs to preserve and protect threatened and endangered species within the park.
+                </p>
+            </div>
+        </div>
+
+        <h2>Education</h2>
+        <div class="timeline">
+            <p class="desktop-only mt-0">2013-2017</p>
+            <div class="mt-1">
+                <h4>Bachelor of Science, Majoring in Computer Science</h4>
+                <h5>Victoria University</h5>
+            </div>
+            <p class="desktop-only mt-0">2012</p>
+            <div class="mt-1">
+                <h4>Diploma of Web Development</h4>
+                <h5>Yoobee School of Design</h5>
+            </div>
+        </div>
+    </div>
 </BaseLayout>
-
-<style>
-  .home-container {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    margin: 2em 0;
-    min-height: 400px;
-  }
-
-  .home-copy {
-    flex: 1;
-  }
-
-  .home-copy h1 {
-    font-weight: 700;
-    margin-bottom: 0.5em;
-    line-height: 1.3;
-  }
-
-  .home-copy p {
-    font-size: 1.4em;
-  }
-
-  .hero-image-container {
-    margin: 0 1em;
-    text-align: center;
-  }
-
-  .hero-image-container picture {
-    display: block;
-    min-height: 250px;
-  }
-
-  .caption {
-    font-size: .8em;
-    font-style: italic;
-    text-align: left;
-  }
-
-  .hero-image {
-    width: 100%;
-    max-width: 550px;
-    margin-bottom: 1em;
-  }
-
-  @media (max-width: 1200px) {
-    p {
-      font-size: 1.2em;
-    }
-
-    .hero-image {
-      max-width: 400px;
-    }
-  }
-
-  @media (max-width: 800px) {
-    .home-container {
-      flex-direction: column;
-    }
-
-    .home-copy {
-      flex: 0;
-      padding-bottom: 2em;
-      text-align: center;
-    }
-  }
-</style>

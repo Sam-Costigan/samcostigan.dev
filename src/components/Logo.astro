@@ -1,7 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import profileImage from '@assets/sam_profile.jpeg';
+---
 <style>
   img {
     display: block;
     width: 120px;
+    border-radius: 50%;
   }
 
   img:hover {
@@ -20,5 +25,5 @@
 </style>
 
 <a id="logo" href="/">
-  <img alt="Hokusai Octopus" src="/assets/logo.svg" />
+   <Image src={ profileImage } priority alt="Sam Costigan" />
 </a>

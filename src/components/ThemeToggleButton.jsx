@@ -67,9 +67,11 @@ export default function ThemeToggle() {
   return (
     <div className="theme-toggle">
       {themes.map((t, i) => (
-        <label key={t} className={theme === t ? 'checked' : ''}>
+        <label key={t} for={t} className={theme === t ? 'checked' : ''}>
+          <span className="invisible">{t}</span>
           {icons[i]}
           <input
+            id={t}
             type="radio"
             name="theme-toggle"
             checked={theme === t}
